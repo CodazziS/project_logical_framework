@@ -10,60 +10,41 @@
             <data>
                 <xpath expr="//page[@name='project_stages']" position="after">
                     <page string="Logical Framework">
-                        <html>
-                            <table class="oe_list_content">
-                                <tr>
-                                    <th>Project Description</th>
-                                    <th>Intervention</th>
-                                    <th>Indicators</th>
-                                    <th>Verification sources</th>
-                                    <th>Hypothesis</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Global Objectives :
-                                        <field name="go" />
-                                    </td>
-                                    <td><br /><field name="go_it" /></td>
-                                    <td><br /><field name="go_in" /></td>
-                                    <td><br /><field name="go_src" /></td>
-                                    <td><br /><field name="go_hy" /></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Specific Objectives :
-                                        <field name="so" />
-                                    </td>
-                                    <td><br /><field name="so_it" /></td>
-                                    <td><br /><field name="so_in" /></td>
-                                    <td><br /><field name="so_src" /></td>
-                                    <td><br /><field name="so_hy" /></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Results :
-                                        <field name="res" />
-                                    </td>
-                                    <td><br /><field name="res_it" /></td>
-                                    <td><br /><field name="res_in" /></td>
-                                    <td><br /><field name="res_src" /></td>
-                                    <td><br /><field name="res_hy" /></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Activities :
-                                        <field name="act" />
-                                    </td>
-                                    <td><br /><field name="act_it" /></td>
-                                    <td><br /><field name="act_in" /></td>
-                                    <td><br /><field name="act_src" /></td>
-                                    <td><br /><field name="act_hy" /></td>
-                                </tr>
-                            </table>
-                        </html>
+                        <field name="logical_framework"/>
                     </page>
                 </xpath>
             </data>
+        </field>
+    </record>
+
+    <record id="project_logical_framework_logical_framework_edit" model="ir.ui.view">
+        <field name="name">project_logical_framework_logical_framework_edit</field>
+        <field name="model">project_logical_framework.logical_framework</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="TEST">
+                <group string="TEST" col="2">
+                    <field name="type" string="Field Type"/>
+                    <field name="logique" string="Logique"/>
+                    <field name="intervention" string="Intervention"/>
+                    <field name="indicators" string="Indicators"/>
+                    <field name="verification" string="Verification source"/>
+                    <field name="hypothesis" string="Hypothesis"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_logical_framework_logical_framework_tree" model="ir.ui.view">
+        <field name="name">project_logical_framework_logical_framework_tree</field>
+        <field name="model">project_logical_framework.logical_framework</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <field name="logiquetitle" string="Logique"/>
+            <field name="intervention" string="Intervention"/>
+            <field name="indicators" string="Indicators"/>
+            <field name="verification" string="Verification source"/>
+            <field name="hypothesis" string="Hypothesis"/>
         </field>
     </record>
 </data>

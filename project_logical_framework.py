@@ -2,33 +2,49 @@ from openerp.osv import fields, osv
 import openerp.addons.decimal_precision as dp
 from lxml import etree as ET
 
-
-
 class project_logical_framework_project(osv.Model):
     _inherit = 'project.project'
 
     _columns = {
-        'go': fields.text('Global objectives'),
-        'go_it': fields.text('Global objectives - Interventions'),
-        'go_in': fields.text('Global objectives - Indicators'),
-        'go_src': fields.text('Global objectives - Verification source'),
-        'go_hy': fields.text('Global objectives - Hypothesis'),
+        'logical_framework' : fields.one2many(
+            'project_logical_framework.logical_framework',
+            'project_id',
+            'Logical Framework'),
+    }
 
-        'so': fields.text('Specefic objectives - '),
-        'so_it': fields.text('Specefic objectives - Interventions'),
-        'so_in': fields.text('Specefic objectives - Indicators'),
-        'so_src': fields.text('Specefic objectives - Verification source'),
-        'so_hy': fields.text('Specefic objectives - Hypothesis'),
 
-        'res': fields.text('Results - '),
-        'res_it': fields.text('Results - Interventions'),
-        'res_in': fields.text('Results - Indicators'),
-        'res_src': fields.text('Results - Verification source'),
-        'res_hy': fields.text('Results - Hypothesis'),
+class project_logical_framework_logical_framework(osv.Model):
+    _name = 'project_logical_framework.logical_framework'
 
-        'act': fields.text('Activities - '),
-        'act_it': fields.text('Activities - Interventions'),
-        'act_in': fields.text('Activities - Indicators'),
-        'act_src': fields.text('Activities - Verification source'),
-        'act_hy': fields.text('Activities - Hypothesis'),
+    _order = "type"
+
+    def _logiquetitle(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+
+        record = self.browse(cr, uid, ids, context=context)
+        for data in record:
+            res_str = dict(self.pool.get('project_logical_framework.logical_framework').fields_get(cr, uid, allfields=['type'], context=context)['type']['selection'])[data.type]
+            res_str += "\n" + data.logique
+            res[data.id] = res_str
+        return res
+
+
+    _columns = {
+        'project_id' : fields.many2one(
+            'project.project',
+            'logical_framework',
+            'Project'),
+
+        'type': fields.selection((
+            ('1','Global Objectives:'),
+            ('2','Specific Objectives:'),
+            ('3','Results:'),
+            ('4','Activities:')),
+                   'Type', required="true"),
+        'logique': fields.text('Logique'),
+        'logiquetitle': fields.function(_logiquetitle, type="text"),
+        'intervention': fields.text('Intervention'),
+        'indicators': fields.text('Indicators'),
+        'verification': fields.text('Verification source'),
+        'hypothesis': fields.text('Hypothesis'),
     }
