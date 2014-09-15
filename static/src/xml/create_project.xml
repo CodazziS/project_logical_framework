@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+    <record model="ir.ui.view" id="project_logical_framework_form">
+        <field name="name">project_logical_framework.form</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='project_stages']" position="after">
+                    <page string="Logical Framework">
+                        <html>
+                            <table class="oe_list_content">
+                                <tr>
+                                    <th>Project Description</th>
+                                    <th>Intervention</th>
+                                    <th>Indicators</th>
+                                    <th>Verification sources</th>
+                                    <th>Hypothesis</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Global Objectives :
+                                        <field name="go" />
+                                    </td>
+                                    <td><br /><field name="go_it" /></td>
+                                    <td><br /><field name="go_in" /></td>
+                                    <td><br /><field name="go_src" /></td>
+                                    <td><br /><field name="go_hy" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Specific Objectives :
+                                        <field name="so" />
+                                    </td>
+                                    <td><br /><field name="so_it" /></td>
+                                    <td><br /><field name="so_in" /></td>
+                                    <td><br /><field name="so_src" /></td>
+                                    <td><br /><field name="so_hy" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Results :
+                                        <field name="res" />
+                                    </td>
+                                    <td><br /><field name="res_it" /></td>
+                                    <td><br /><field name="res_in" /></td>
+                                    <td><br /><field name="res_src" /></td>
+                                    <td><br /><field name="res_hy" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Activities :
+                                        <field name="act" />
+                                    </td>
+                                    <td><br /><field name="act_it" /></td>
+                                    <td><br /><field name="act_in" /></td>
+                                    <td><br /><field name="act_src" /></td>
+                                    <td><br /><field name="act_hy" /></td>
+                                </tr>
+                            </table>
+                        </html>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</data>
+</openerp>
