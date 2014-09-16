@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+    <record model="ir.ui.view" id="project_logical_framework_form">
+        <field name="name">project_logical_framework.form</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='project_stages']" position="after">
+                    <page string="Logical Framework">
+                        <field name="logical_framework"/>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="project_logical_framework_logical_framework_edit" model="ir.ui.view">
+        <field name="name">project_logical_framework_logical_framework_edit</field>
+        <field name="model">project_logical_framework.logical_framework</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="TEST">
+                <group string="TEST" col="2">
+                    <field name="type" string="Field Type"/>
+                    <field name="logique" string="Logique"/>
+                    <field name="intervention" string="Intervention"/>
+                    <field name="indicators" string="Indicators"/>
+                    <field name="verification" string="Verification source"/>
+                    <field name="hypothesis" string="Hypothesis"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_logical_framework_logical_framework_tree" model="ir.ui.view">
+        <field name="name">project_logical_framework_logical_framework_tree</field>
+        <field name="model">project_logical_framework.logical_framework</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <field name="logiquetitle" string="Logique"/>
+            <field name="intervention" string="Intervention"/>
+            <field name="indicators" string="Indicators"/>
+            <field name="verification" string="Verification source"/>
+            <field name="hypothesis" string="Hypothesis"/>
+        </field>
+    </record>
+</data>
+</openerp>

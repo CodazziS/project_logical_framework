@@ -1,2 +1,3 @@
-odoo-project_logical_framwork
-=============================
+#Project Logical Framework
+
+Work in progress ...
