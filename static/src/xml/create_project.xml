@@ -10,8 +10,7 @@
             <data>
                 <xpath expr="//page[@name='project_stages']" position="after">
                     <page string="Logical Framework">
-                        <button icon="gtk-floppy" /><br />
-                        <button name="%(report_logical_framework)d" string="Print" type="action" />
+                        <button icon="gtk-floppy" name="%(report_logical_framework)d" type="action" /><br />
                         <field name="logical_framework"/>
                     </page>
                 </xpath>
