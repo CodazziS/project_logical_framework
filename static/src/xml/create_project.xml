@@ -10,6 +10,8 @@
             <data>
                 <xpath expr="//page[@name='project_stages']" position="after">
                     <page string="Logical Framework">
+                        <button icon="gtk-floppy" /><br />
+                        <button name="%(report_logical_framework)d" string="Print" type="action" />
                         <field name="logical_framework"/>
                     </page>
                 </xpath>
@@ -50,7 +52,7 @@
 
     <report 
         id="report_logical_framework"
-        model="project_logical_framework.logical_framework"
+        model="project.project"
         string="Logical Framework"
         report_type="qweb-pdf"
         name="project_logical_framework.report_logical_framework2"
