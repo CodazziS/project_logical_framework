@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+	<template id="report_logical_framework2">
+	    <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+		        <t t-call="report.external_layout">
+		            <div class="page">
+		                <h1 t-field="o.name"></h1>
+		                <h2>Logical Framework</h2>
+
+		                <table class="table table-condensed">
+		                <thead>
+		                    <tr>
+		                        <th>Logique</th>
+		                        <th>Intervention</th>
+		                        <th>Indicators</th>
+		                        <th>Verification sources</th>
+		                        <th>Hypothesis</th>
+		                    </tr>
+		                </thead>
+		                <tbody class="invoice_tbody">
+		                    <tr t-foreach="o.logical_framework" t-as="lf">
+		                        <td>
+		                        	<b><span t-field="lf.type"/></b><br />
+		                        	<span t-field="lf.logique"/>
+		                        </td>
+		                        <td><span t-field="lf.intervention"/></td>
+		                        <td><span t-field="lf.indicators"/></td>
+		                        <td><span t-field="lf.verification"/></td>
+		                        <td><span t-field="lf.hypothesis"/></td>
+		                    </tr>
+		                </tbody>
+		            </table>
+
+		            </div>
+		        </t>
+		    </t>
+	    </t>
+	</template>
+</data>
+</openerp>

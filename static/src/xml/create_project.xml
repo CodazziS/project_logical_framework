@@ -10,6 +10,7 @@
             <data>
                 <xpath expr="//page[@name='project_stages']" position="after">
                     <page string="Logical Framework">
+                        <button icon="gtk-floppy" name="%(report_logical_framework)d" type="action" /><br />
                         <field name="logical_framework"/>
                     </page>
                 </xpath>
@@ -22,8 +23,8 @@
         <field name="model">project_logical_framework.logical_framework</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
-            <form string="TEST">
-                <group string="TEST" col="2">
+            <form string="Logical Framework">
+                <group string="Logical Framework" col="2">
                     <field name="type" string="Field Type"/>
                     <field name="logique" string="Logique"/>
                     <field name="intervention" string="Intervention"/>
@@ -47,5 +48,14 @@
             <field name="hypothesis" string="Hypothesis"/>
         </field>
     </record>
+
+    <report 
+        id="report_logical_framework"
+        model="project.project"
+        string="Logical Framework"
+        report_type="qweb-pdf"
+        name="project_logical_framework.report_logical_framework2"
+        file="project_logical_framework.report_logical_framework2"
+    />
 </data>
 </openerp>
