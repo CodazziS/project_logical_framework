@@ -10,7 +10,7 @@
             <data>
                 <xpath expr="//page[@name='project_stages']" position="after">
                     <page string="Logical Framework">
-                        <button icon="gtk-floppy" name="%(report_logical_framework)d" type="action" /><br />
+                        <button icon="gtk-floppy" name="report_logical_framework2" type="action" /><br />
                         <field name="logical_framework"/>
                     </page>
                 </xpath>
@@ -49,10 +49,10 @@
         </field>
     </record>
 
-    <report 
+    <report
         id="report_logical_framework"
         model="project.project"
-        string="Logical Framework"
+        string="Invoices"
         report_type="qweb-pdf"
         name="project_logical_framework.report_logical_framework2"
         file="project_logical_framework.report_logical_framework2"
