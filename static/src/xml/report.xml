@@ -6,13 +6,13 @@
             <t t-foreach="docs" t-as="o">
 		        <t t-call="report.external_layout">
 		            <div class="page">
-		                <h1 t-field="o.name"></h1>
+		                <h1 t-field="o.name"> </h1>
 		                <h2>Logical Framework</h2>
 
 		                <table class="table table-condensed">
 		                <thead>
 		                    <tr>
-		                        <th>Logique</th>
+		                        <th>Logic</th>
 		                        <th>Intervention</th>
 		                        <th>Indicators</th>
 		                        <th>Verification sources</th>
@@ -23,7 +23,7 @@
 		                    <tr t-foreach="o.logical_framework" t-as="lf">
 		                        <td>
 		                        	<b><span t-field="lf.type"/></b><br />
-		                        	<span t-field="lf.logique"/>
+		                        	<span t-field="lf.logic"/>
 		                        </td>
 		                        <td><span t-field="lf.intervention"/></td>
 		                        <td><span t-field="lf.indicators"/></td>
