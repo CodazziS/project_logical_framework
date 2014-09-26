@@ -35,7 +35,7 @@
             <form string="Logical Framework">
                 <group string="Logical Framework" col="2">
                     <field name="type" string="Field Type"/>
-                    <field name="logique" string="Logique"/>
+                    <field name="logic" string="Logic"/>
                     <field name="intervention" string="Intervention"/>
                     <field name="indicators" string="Indicators"/>
                     <field name="verification" string="Verification source"/>
@@ -50,7 +50,7 @@
         <field name="model">project_logical_framework.logical_framework</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <field name="logiquetitle" string="Logique"/>
+            <field name="logic_title" string="Logic"/>
             <field name="intervention" string="Intervention"/>
             <field name="indicators" string="Indicators"/>
             <field name="verification" string="Verification source"/>
