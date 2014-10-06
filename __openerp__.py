@@ -10,6 +10,6 @@ Project Logical Framework
     'depends': ['project'],
     'data': [
         'static/src/xml/report.xml',
-        'static/src/xml/create_project.xml'        
+        'static/src/xml/create_project.xml'
     ],
 }

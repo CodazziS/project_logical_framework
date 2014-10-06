@@ -34,7 +34,7 @@ class project_logical_framework_logical_framework(osv.Model):
 
 
     _columns = {
-        'project_id' : fields.many2one(
+        'project_id': fields.many2one(
             'project.project',
             'logical_framework',
             'Project'),
